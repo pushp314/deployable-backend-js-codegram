@@ -2,7 +2,7 @@ import http from 'http';
 import app from './app.js'; // Added .js extension
 import { initSocket } from './socket.js'; // Added .js extension
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || https://seahorse-app-wlact.ondigitalocean.app;
 
 const server = http.createServer(app);
 
@@ -10,11 +10,11 @@ const server = http.createServer(app);
 initSocket(server);
 
 app.get('/', (req, res) => {
-  res.send(`💻 API documentation available at <a href="http://localhost:${PORT}/api-docs">api-docs</a>`);
+  res.send(`💻 API documentation available at <a href="https://seahorse-app-wlact.ondigitalocean.app/api-docs">api-docs</a>`);
 });
 
 // Start server
 server.listen(PORT, () => {
-  console.log(`🚀 Server running on port http://localhost:${PORT}/`);
-  console.log(`💻 API documentation available at http://localhost:${PORT}/api-docs`);
+  console.log(`🚀 Server running on port https://seahorse-app-wlact.ondigitalocean.app/`);
+  console.log(`💻 API documentation available at https://seahorse-app-wlact.ondigitalocean.app/api-docs`);
 });
