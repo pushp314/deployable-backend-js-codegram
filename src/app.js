@@ -7,6 +7,7 @@ import cron from 'node-cron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import swaggerUi from 'swagger-ui-express';
+import rateLimit from 'express-rate-limit';
 import fs from 'fs';
 import connectPgSimple from 'connect-pg-simple';
 import { authLimiter, uploadLimiter, apiLimiter, enhancedCSP, sanitizeInput, validatePagination } from './middlewares/securityMiddleware.js';
@@ -40,6 +41,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+// --- Trust Proxy Setting ---
+// This is required for rate limiting and other security features to work correctly
+// behind a proxy like on DigitalOcean App Platform.
+app.set('trust proxy', 1);
 
 // --- CORS Configuration ---
 const frontendUrl = env.FRONTEND_URL;
