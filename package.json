@@ -2,6 +2,9 @@
   "name": "codegram-backend",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "dev": "node --watch src/server.js",
     "build": "echo 'No build step required for JavaScript. Consider using a linter/bundler if needed.'",
