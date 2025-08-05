@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "build": "echo 'No build step required for JavaScript. Consider using a linter/bundler if needed.'",
-    "start": "node dist/server.js",
+    "start": "node src/server.js"
     "start:prod": "NODE_ENV=production node dist/server.js",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
